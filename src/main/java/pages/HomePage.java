@@ -16,9 +16,10 @@ public class HomePage extends BasePage{
     @FindBy (xpath = "//div[@class='category-cards']/div[2]")
     WebElement btnForm;
 
-    public FormsPage clickbtnForm(){
+    public FormsPage clickBtnForm(){
         //hideFooter();
         btnForm.click();
+
         return new FormsPage(driver);
 
     }

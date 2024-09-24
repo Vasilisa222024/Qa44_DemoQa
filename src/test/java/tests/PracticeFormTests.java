@@ -4,8 +4,10 @@ import manager.ApplicationManager;
 import manager.dto.StudentDTO;
 import manager.enumps.Gender;
 import manager.enumps.Hobbies;
+import manager.enumps.StateCity;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pages.HomePage;
@@ -21,11 +23,10 @@ public class PracticeFormTests extends ApplicationManager {
         List<Hobbies> listHobbies=new ArrayList<>();
         listHobbies.add(Hobbies.SPORTS);
         listHobbies.add(Hobbies.MUSIC);
-StudentDTO student=new StudentDTO( "Steve", "Silver","silver123@gmail.com"
-        , Gender.OTHER,"1234567890",  "12 Sep 1900",  "Math, Physics, Economics",
-        listHobbies,  "",  "Haifa st 1 app 2",  "NCR",  "Delhi");
 
-
+        StudentDTO student = new StudentDTO("steve","silver","silver123@gmail.com",Gender.OTHER,
+                "1234567890","12 Sep 1900","Math, Physics, Economics",listHobbies,"","Haifa st 1 app 2",
+                StateCity.UTTAR_PRADESH.getState(), StateCity.UTTAR_PRADESH.getCity()[2]);
 
 
 //        StudentDTO student=new StudentDTO();
@@ -35,10 +36,13 @@ StudentDTO student=new StudentDTO( "Steve", "Silver","silver123@gmail.com"
 //        student.setGender(Gender.MALE);
 
 
-        new HomePage(getDriver())
-                .clickbtnForm()
+        Assert.assertTrue(new HomePage(getDriver())
+                .clickBtnForm()
                 .clickbtnPracticeForm()
                 .fillStudentsform(student)
+                .clickBtnSubmit()
+                .isTextToBePresent_textThenksFor())
+
                 ;
 
 

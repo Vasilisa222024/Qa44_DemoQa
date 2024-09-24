@@ -1,6 +1,6 @@
 package manager.enumps;
 
-public enum Statecity {
+public enum StateCity {
     NCR("NCR",new String[]{"Delhi","Gurgaon","Noida"}),
     UTTAR_PRADESH("Uttar Pradesh",new String[]{"Agra", "Lucknow", "Merrut"}),
     HARYANA("Haryana",new String[]{"Karnal", "Panipat"}),
@@ -8,7 +8,7 @@ public enum Statecity {
     private final String state;
     private final String[]city;
 
-    Statecity(String state, String[] city) {
+    StateCity(String state, String[] city) {
         this.state = state;
         this.city = city;
     }

@@ -68,7 +68,7 @@ WebElement selectPicture;
         typeFieldSubjects(studentDto.getSubject());
         typeHobbies(studentDto.getHobbies());
         //"Mostovoy2023-8.jpg")
-        selectPicture.sendKeys();
+        //selectPicture.sendKeys();
         fieldCurrentAddress.sendKeys(studentDto.getCurrentAddress());
         //================================
         fieldState.sendKeys(studentDto.getState());
@@ -79,25 +79,46 @@ WebElement selectPicture;
 
     }
 
-    private void
-    typeHobbies (List<Hobbies> hobbies) {
+    public AutomationPracticeForm clickBtnSubmit(){
+        btnSubmit.click();
+        return this;
+    }
+//    private void typeHobbies (List<Hobbies> hobbies) {
+//
+//
+//        for (Hobbies h : hobbies) {
+//            switch (h) {
+//                case MUSIC:
+//                    driver.findElement(By.cssSelector(h.getLocator())).click();
+//                    break;
+//                case SPORTS:
+//                   driver.findElement(By.cssSelector(h.getLocator())).click();
+//                   break;
+//                case READING:
+//                    driver.findElement(By.cssSelector(h.getLocator())).click();
+//                    break;
+//            }
+//        }
+//
+//    }
 
+    private void typeHobbies(List<Hobbies> hobbies) {
         for (Hobbies h : hobbies) {
             switch (h) {
                 case MUSIC:
                     driver.findElement(By.cssSelector(h.getLocator())).click();
                     break;
                 case SPORTS:
-                   driver.findElement(By.cssSelector(h.getLocator())).click();
+                    driver.findElement(By.cssSelector(h.getLocator())).click();
+                    break;
                 case READING:
                     driver.findElement(By.cssSelector(h.getLocator())).click();
                     break;
+
             }
         }
 
     }
-
-
 
 
     private void typeFieldSubjects(String subject) {
