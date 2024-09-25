@@ -42,9 +42,9 @@ public class AutomationPracticeForm extends BasePage {
 WebElement selectPicture;
     @FindBy(id="currentAddress")
     WebElement fieldCurrentAddress;
-    @FindBy(id="#react-select-3-input")
+    @FindBy(id="react-select-3-input")
     WebElement fieldState;
-    @FindBy(id="#react-select-4-input")
+    @FindBy(id="react-select-4-input")
     WebElement fieldCity;
     @FindBy(xpath = "//button[text()='Submit']")
     WebElement btnSubmit;
@@ -74,7 +74,7 @@ WebElement selectPicture;
         fieldState.sendKeys(studentDto.getState());
         fieldState.sendKeys (Keys.ENTER);
         fieldCity.sendKeys(studentDto.getCity());
-        fieldState.sendKeys (Keys.ENTER);
+        fieldCity.sendKeys (Keys.ENTER);
         return this;
 
     }

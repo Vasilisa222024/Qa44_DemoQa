@@ -17,7 +17,7 @@ public class BasePage {
 
     public void hideFooter() {
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js. executeScript ( "document. querySelector ('footer') style display = 'none'");
+        js. executeScript ( "document. querySelector ('footer').style display = 'none'");
     }
 
     public boolean isTextToBePresent(WebElement element,String text,int time){
